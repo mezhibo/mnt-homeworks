@@ -7,3 +7,8 @@
     hosts:
       ubuntu:
         ansible_connection: docker
+  local:
+    hosts:
+      bubuntu:
+        ansible_connection: local
+        ansible_host: localhost
