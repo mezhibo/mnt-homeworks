@@ -4,7 +4,7 @@ clickhouse:
     clickhouse-01:
       ansible_connection: ssh
       ansible_ssh_user: centos
-      ansible_host: 89.169.130.240
+      ansible_host: 51.250.69.183
       ansible_private_key_file: ~/.ssh/id_rsa
 
 vector:
@@ -12,5 +12,5 @@ vector:
     vector-01:
       ansible_connection: ssh
       ansible_ssh_user: centos
-      ansible_host: 89.169.131.75
+      ansible_host: 62.84.124.215
       ansible_private_key_file: ~/.ssh/id_rsa
