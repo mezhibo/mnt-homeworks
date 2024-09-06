@@ -1,6 +1,6 @@
 ### ===clickhouse===
 data "yandex_compute_image" "centos-clickhouse" {
-  family = var.vm_os_centos
+  family = var.vm_os_ubuntu
 }
 resource "yandex_compute_instance" "clickhouse" {
   name        = var.vm_01
@@ -14,7 +14,9 @@ resource "yandex_compute_instance" "clickhouse" {
   metadata = local.metadata
   boot_disk {
     initialize_params {
-      image_id = data.yandex_compute_image.centos-clickhouse.image_id
+      image_id = "fd8m6vs8suqgm9afve5g"
+      type        = "network-ssd"
+      size        = "50"
     }
   }
   scheduling_policy {
@@ -29,7 +31,7 @@ resource "yandex_compute_instance" "clickhouse" {
 
 # ### ===vector===
 # data "yandex_compute_image" "centos-vector" {
-#   family = var.vm_os_centos
+#   family = var.vm_os_ubuntu
 # }
 # resource "yandex_compute_instance" "vector" {
 #   name        = var.vm_02
@@ -58,7 +60,7 @@ resource "yandex_compute_instance" "clickhouse" {
 
 # ### ===lighthouse===
 # data "yandex_compute_image" "centos-lighthouse" {
-#   family = var.vm_os_centos
+#   family = var.vm_os_ubuntu
 # }
 # resource "yandex_compute_instance" "lighthouse" {
 #   name        = var.vm_03
