@@ -2,15 +2,15 @@
 variable "vms_resources" {
   type = map(map(number))
   default = {
-    jenkins = {
-      cores    = 2
+    nexus = {
+      cores    = 4
       memory   = 4
-      fraction = 100
+      fraction = 50
     }
-    jw = {
+    vector = {
       cores    = 2
-      memory   = 4
-      fraction = 100
+      memory   = 2
+      fraction = 5
     }
     lighthouse = {
       cores    = 2
@@ -20,9 +20,9 @@ variable "vms_resources" {
   }
 }
 
-variable "vm_os_ubuntu" {
+variable "vm_os_centos" {
   type        = string
-  default     = "ubuntu-2004-lts"
+  default     = "centos-7"
   description = "ubuntu version"
 }
 
@@ -35,13 +35,13 @@ variable "vm_cpu_id_v1" {
 ### vm_name/hostname
 variable "vm_01" {
   type        = string
-  default     = "jenkins"
+  default     = "nexus"
   description = "vm name"
 }
 
 variable "vm_02" {
   type        = string
-  default     = "jw"
+  default     = "vector"
   description = "vm name"
 }
 
